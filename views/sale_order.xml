@@ -8,10 +8,10 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <header position="inside">
+                <xpath expr="//header/button[@name='btn_calcular_comision_agencia']" position="before">
                     <field name="invoice_ids" invisible="1"/>
-                    <button string="Calcular Fee" name="btn_compute_fee" type="object" class="oe_highlight" /> <!-- invisible="invoice_ids != []"-->
-                </header>
+                    <button string="Calcular Fee" name="btn_compute_fee" type="object" class="oe_highlight" invisible="invoice_ids"/>
+                </xpath>
             </field>
         </record>
 
